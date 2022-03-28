@@ -29,6 +29,10 @@
   "homepage": "https://github.com/oscarbebop/minesweeper#readme",
   "devDependencies": {
     "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-interactions": "^6.4.19",
@@ -43,6 +47,7 @@
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
     "babel-loader": "^8.2.3",
+    "chromatic": "^6.5.3",
     "css-loader": "^6.7.1",
     "eslint": "^8.11.0",
     "eslint-config-prettier": "^8.5.0",
@@ -61,10 +66,6 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
-    "@babel/core": "^7.17.8",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-react": "^7.16.7",
-    "@babel/preset-typescript": "^7.16.7",
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
     "react": "^17.0.2",

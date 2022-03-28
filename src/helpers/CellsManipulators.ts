@@ -5,7 +5,7 @@ import { Cell, Coords, Field } from "./Field";
  * @param {Coords} coords
  * @returns {Record<string, [number, number]>}
  */
-export const getNeigboursItems = ([y, x]: Coords): Record<
+export const getNeighboursItems = ([y, x]: Coords): Record<
   string,
   [number, number]
 > => ({
@@ -34,8 +34,8 @@ export const checkItemInField = ([y, x]: Coords, { length }: Field): boolean =>
  * @param {Field} field
  * @returns {Cell}
  */
-export const incrementNeibours = (coords: Coords, field: Field): Field => {
-  const items = getNeigboursItems(coords);
+export const incrementNeighbours = (coords: Coords, field: Field): Field => {
+  const items = getNeighboursItems(coords);
 
   for (const [y, x] of Object.values(items)) {
     if (checkItemInField([y, x], field)) {

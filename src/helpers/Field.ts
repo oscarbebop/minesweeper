@@ -1,4 +1,4 @@
-import { incrementNeibours } from "./CellsManipulators";
+import { incrementNeighbours } from "./CellsManipulators";
 
 export type Cell = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 export type Field = Cell[][];
@@ -63,7 +63,7 @@ export const fieldGenerator = (size: number, probability: number): Field => {
     for (let x = 0; x < size; x++) {
       if (restCellsWithBombs / unprocessedCells > Math.random()) {
         result[y][x] = CellState.bomb;
-        incrementNeibours([y, x], result);
+        incrementNeighbours([y, x], result);
         restCellsWithBombs--;
       }
       unprocessedCells--;

@@ -1,7 +1,7 @@
 import { CellState, Field } from "./Field";
 import {
-  incrementNeibours,
-  getNeigboursItems,
+  incrementNeighbours,
+  getNeighboursItems,
   checkItemInField,
 } from "./CellsManipulators";
 
@@ -9,7 +9,7 @@ const { empty: e, bomb: b } = CellState;
 
 describe("Check neigbours selectors", () => {
   it("With [0, 0] coords", () => {
-    expect(getNeigboursItems([0, 0])).toStrictEqual({
+    expect(getNeighboursItems([0, 0])).toStrictEqual({
       top: [-1, 0],
       topRight: [-1, 1],
       right: [0, 1],
@@ -20,8 +20,9 @@ describe("Check neigbours selectors", () => {
       leftTop: [-1, -1],
     });
   });
+
   it("With [3, 3] coords", () => {
-    expect(getNeigboursItems([3, 3])).toStrictEqual({
+    expect(getNeighboursItems([3, 3])).toStrictEqual({
       top: [2, 3],
       topRight: [2, 4],
       right: [3, 4],
@@ -80,11 +81,12 @@ describe("checkItemInField tests", () => {
 describe("Check Increment Neibours", () => {
   describe("Simple cases", () => {
     it("Field with only one item", () => {
-      expect(incrementNeibours([0, 0], [[b]])).toStrictEqual([[b]]);
+      expect(incrementNeighbours([0, 0], [[b]])).toStrictEqual([[b]]);
     });
+
     it("Field 2x2 with one mine", () => {
       expect(
-        incrementNeibours(
+        incrementNeighbours(
           [0, 0],
           [
             [b, e],
@@ -96,9 +98,10 @@ describe("Check Increment Neibours", () => {
         [1, 1],
       ]);
     });
+
     it("Field 2x2 with two mines", () => {
       expect(
-        incrementNeibours(
+        incrementNeighbours(
           [0, 0],
           [
             [b, e],
@@ -114,7 +117,7 @@ describe("Check Increment Neibours", () => {
   describe("3x3 cases", () => {
     it("Field 3x3 with one centered mine", () => {
       expect(
-        incrementNeibours(
+        incrementNeighbours(
           [1, 1],
           [
             [e, e, e],
@@ -128,9 +131,10 @@ describe("Check Increment Neibours", () => {
         [1, 1, 1],
       ]);
     });
+
     it("Field 3x3 with two mines", () => {
       expect(
-        incrementNeibours(
+        incrementNeighbours(
           [1, 1],
           [
             [0, 1, b],
@@ -144,9 +148,10 @@ describe("Check Increment Neibours", () => {
         [1, 1, 1],
       ]);
     });
+
     it("Field 3x3 as syntetic case with neighbors cells is reached max possible bombs", () => {
       expect(
-        incrementNeibours(
+        incrementNeighbours(
           [1, 1],
           [
             [0, 1, b],
@@ -164,7 +169,7 @@ describe("Check Increment Neibours", () => {
   describe("9x9 cases", () => {
     it("Field 9x9 with 7 mines", () => {
       expect(
-        incrementNeibours(
+        incrementNeighbours(
           [4, 5],
           [
             [9, 1, 0, 0, 0, 0, 1, 1, 1],
@@ -190,9 +195,10 @@ describe("Check Increment Neibours", () => {
         [0, 0, 0, 0, 0, 0, 0, 0, 0],
       ]);
     });
+
     it("Field 9x9 with 11 mines", () => {
       expect(
-        incrementNeibours(
+        incrementNeighbours(
           [5, 4],
           [
             [9, 2, 9, 1, 0, 0, 1, 1, 1],
