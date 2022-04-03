@@ -88,7 +88,7 @@ describe("Field Generator", () => {
       const probability = mines / (size * size);
       const field = fieldGenerator(size, probability);
 
-      console.table(field);
+      // console.table(field);
 
       const flatField = field.flat();
 
